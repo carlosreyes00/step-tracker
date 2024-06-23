@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		122231912C27603600AA8021 /* Step_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122231902C27603600AA8021 /* Step_TrackerApp.swift */; };
-		122231932C27603600AA8021 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122231922C27603600AA8021 /* ContentView.swift */; };
+		122231932C27603600AA8021 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122231922C27603600AA8021 /* DashboardView.swift */; };
 		122231952C27603800AA8021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122231942C27603800AA8021 /* Assets.xcassets */; };
 		122231982C27603800AA8021 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122231972C27603800AA8021 /* Preview Assets.xcassets */; };
+		12D92DE72C2870900086AC61 /* HealtDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D92DE62C2870900086AC61 /* HealtDataListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1222318D2C27603600AA8021 /* Step Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Step Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		122231902C27603600AA8021 /* Step_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step_TrackerApp.swift; sourceTree = "<group>"; };
-		122231922C27603600AA8021 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		122231922C27603600AA8021 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		122231942C27603800AA8021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		122231972C27603800AA8021 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12D92DE62C2870900086AC61 /* HealtDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealtDataListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +54,10 @@
 			isa = PBXGroup;
 			children = (
 				122231902C27603600AA8021 /* Step_TrackerApp.swift */,
-				122231922C27603600AA8021 /* ContentView.swift */,
+				122231922C27603600AA8021 /* DashboardView.swift */,
 				122231942C27603800AA8021 /* Assets.xcassets */,
 				122231962C27603800AA8021 /* Preview Content */,
+				12D92DE62C2870900086AC61 /* HealtDataListView.swift */,
 			);
 			path = "Step Tracker";
 			sourceTree = "<group>";
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				122231932C27603600AA8021 /* ContentView.swift in Sources */,
+				122231932C27603600AA8021 /* DashboardView.swift in Sources */,
 				122231912C27603600AA8021 /* Step_TrackerApp.swift in Sources */,
+				12D92DE72C2870900086AC61 /* HealtDataListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
