@@ -11,6 +11,7 @@
 		122231932C27603600AA8021 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122231922C27603600AA8021 /* DashboardView.swift */; };
 		122231952C27603800AA8021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122231942C27603800AA8021 /* Assets.xcassets */; };
 		122231982C27603800AA8021 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122231972C27603800AA8021 /* Preview Assets.xcassets */; };
+		12AB71232C28B4880040984C /* HealthKitPermissionPrimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB71222C28B4880040984C /* HealthKitPermissionPrimingView.swift */; };
 		12D92DE72C2870900086AC61 /* HealtDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D92DE62C2870900086AC61 /* HealtDataListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +21,7 @@
 		122231922C27603600AA8021 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		122231942C27603800AA8021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		122231972C27603800AA8021 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12AB71222C28B4880040984C /* HealthKitPermissionPrimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitPermissionPrimingView.swift; sourceTree = "<group>"; };
 		12D92DE62C2870900086AC61 /* HealtDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealtDataListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,9 +57,10 @@
 			children = (
 				122231902C27603600AA8021 /* Step_TrackerApp.swift */,
 				122231922C27603600AA8021 /* DashboardView.swift */,
+				12D92DE62C2870900086AC61 /* HealtDataListView.swift */,
+				12AB71222C28B4880040984C /* HealthKitPermissionPrimingView.swift */,
 				122231942C27603800AA8021 /* Assets.xcassets */,
 				122231962C27603800AA8021 /* Preview Content */,
-				12D92DE62C2870900086AC61 /* HealtDataListView.swift */,
 			);
 			path = "Step Tracker";
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				122231932C27603600AA8021 /* DashboardView.swift in Sources */,
 				122231912C27603600AA8021 /* Step_TrackerApp.swift in Sources */,
 				12D92DE72C2870900086AC61 /* HealtDataListView.swift in Sources */,
+				12AB71232C28B4880040984C /* HealthKitPermissionPrimingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
