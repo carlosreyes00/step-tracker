@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 enum HealthMetricContext: CaseIterable, Identifiable {
     case steps, weight
@@ -44,7 +45,7 @@ struct DashboardView: View {
                         NavigationLink(value: selectedStat) {
                             HStack {
                                 VStack(alignment: .leading) {
-                                    Label("Steps", systemImage: "figure.walk")
+                                    Label(isSteps ? "Steps" : "Weight", systemImage: "figure.walk")
                                         .font(.title3.bold())
                                         .foregroundStyle(.pink)
                                     
@@ -60,9 +61,13 @@ struct DashboardView: View {
                         .foregroundStyle(.secondary)
                         .padding(.bottom, 12)
                         
-                        RoundedRectangle(cornerRadius: 12)
-                            .foregroundStyle(.secondary)
-                            .frame(height: 150)
+                        Chart {
+                            ForEach(hkManager.stepData) { steps in
+                                BarMark(x: .value("Date", steps.date, unit: .day),
+                                        y: .value("Steps", steps.value))
+                            }
+                        }
+                        .frame(height: 150)
                     }
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color(.secondarySystemBackground)))
@@ -89,6 +94,7 @@ struct DashboardView: View {
             }
             .padding()
             .task {
+                await hkManager.fetchStepCount()
                 isShowingPermissionPrimingSheet = !hasSeenPermissionPriming
             }
             .navigationTitle("Dashboard")
