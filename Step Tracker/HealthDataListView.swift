@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HealtDataListView: View {
+struct HealthDataListView: View {
     
     @State private var isShowingAddData = false
     @State private var addDataDate: Date = .now
@@ -67,6 +67,6 @@ struct HealtDataListView: View {
 
 #Preview {
     NavigationStack {
-        HealtDataListView(metric: .weight)
+        HealthDataListView(metric: .weight)
     }
 }
