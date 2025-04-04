@@ -28,12 +28,20 @@ struct DashboardView: View {
     @AppStorage("hasSeenPermissionPriming") private var hasSeenPermissionPriming = false
     @State private var isShowingPermissionPrimingSheet = false
     @State private var selectedStat: HealthMetricContext = .steps
+    @State private var rawSelectedDate: Date?
     var isSteps: Bool { selectedStat == .steps}
     
     var avgStepCount: Double {
         guard !hkManager.stepData.isEmpty else { return 0 }
         let totalSteps = hkManager.stepData.reduce(0) { $0 + $1.value }
         return totalSteps / Double(hkManager.stepData.count)
+    }
+    
+    var selectedHealthMetric: HealthMetric? {
+        guard let rawSelectedDate else { return nil }
+        return hkManager.stepData.first {
+            Calendar.current.isDate(rawSelectedDate, inSameDayAs: $0.date)
+        }
     }
     
     var body: some View {
@@ -68,6 +76,10 @@ struct DashboardView: View {
                         .padding(.bottom, 12)
                         
                         Chart {
+                            if let selectedHealthMetric {
+                                RuleMark(x: .value("Selected Metric", selectedHealthMetric.date))
+                            }
+                            
                             RuleMark(y: .value("Average", avgStepCount))
                                 .foregroundStyle(Color.secondary)
                                 .lineStyle(.init(lineWidth: 1, dash: [5]))
@@ -80,6 +92,7 @@ struct DashboardView: View {
                             }
                         }
                         .frame(height: 150)
+                        .chartXSelection(value: $rawSelectedDate)
                         .chartXAxis {
                             AxisMarks {
                                 AxisValueLabel(format: .dateTime.month(.defaultDigits).day())
@@ -119,12 +132,17 @@ struct DashboardView: View {
             }
             .padding()
             .task {
+                // if restarted, first ask for permission (comment both await functions)
+                // add the data (fetchStepCount())
+                // fetch it (addSimulatorData())
+                // just one at a time
                 await hkManager.fetchStepCount()
+//                await hkManager.addSimulatorData()
                 isShowingPermissionPrimingSheet = !hasSeenPermissionPriming
             }
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetricContext.self) { metric in
-                HealtDataListView(metric: metric)
+                HealthDataListView(metric: metric)
             }
             .sheet(isPresented: $isShowingPermissionPrimingSheet, onDismiss: {
                 // fetch health data

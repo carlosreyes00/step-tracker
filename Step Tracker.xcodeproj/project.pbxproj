@@ -14,7 +14,7 @@
 		12AA90E22CBDF72C00733083 /* HealthMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA90E12CBDF72C00733083 /* HealthMetric.swift */; };
 		12AB71232C28B4880040984C /* HealthKitPermissionPrimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB71222C28B4880040984C /* HealthKitPermissionPrimingView.swift */; };
 		12ADD67A2C31DCEF00F2480A /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADD6792C31DCEF00F2480A /* HealthKitManager.swift */; };
-		12D92DE72C2870900086AC61 /* HealtDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D92DE62C2870900086AC61 /* HealtDataListView.swift */; };
+		12D92DE72C2870900086AC61 /* HealthDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D92DE62C2870900086AC61 /* HealthDataListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		12AB71222C28B4880040984C /* HealthKitPermissionPrimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitPermissionPrimingView.swift; sourceTree = "<group>"; };
 		12ADD6782C31D8A900F2480A /* Step Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Step Tracker.entitlements"; sourceTree = "<group>"; };
 		12ADD6792C31DCEF00F2480A /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
-		12D92DE62C2870900086AC61 /* HealtDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealtDataListView.swift; sourceTree = "<group>"; };
+		12D92DE62C2870900086AC61 /* HealthDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 				12ADD6782C31D8A900F2480A /* Step Tracker.entitlements */,
 				122231902C27603600AA8021 /* Step_TrackerApp.swift */,
 				122231922C27603600AA8021 /* DashboardView.swift */,
-				12D92DE62C2870900086AC61 /* HealtDataListView.swift */,
+				12D92DE62C2870900086AC61 /* HealthDataListView.swift */,
 				12AB71222C28B4880040984C /* HealthKitPermissionPrimingView.swift */,
 				12ADD6792C31DCEF00F2480A /* HealthKitManager.swift */,
 				12AA90E12CBDF72C00733083 /* HealthMetric.swift */,
@@ -153,7 +153,7 @@
 			files = (
 				122231932C27603600AA8021 /* DashboardView.swift in Sources */,
 				122231912C27603600AA8021 /* Step_TrackerApp.swift in Sources */,
-				12D92DE72C2870900086AC61 /* HealtDataListView.swift in Sources */,
+				12D92DE72C2870900086AC61 /* HealthDataListView.swift in Sources */,
 				12ADD67A2C31DCEF00F2480A /* HealthKitManager.swift in Sources */,
 				12AB71232C28B4880040984C /* HealthKitPermissionPrimingView.swift in Sources */,
 				12AA90E22CBDF72C00733083 /* HealthMetric.swift in Sources */,
