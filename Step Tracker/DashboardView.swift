@@ -25,7 +25,9 @@ enum HealthMetricContext: CaseIterable, Identifiable {
 struct DashboardView: View {
     
     @Environment(HealthKitManager.self) private var hkManager
-    @AppStorage("hasSeenPermissionPriming") private var hasSeenPermissionPriming = false
+    @AppStorage(
+        "hasSeenPermissionPriming"
+    ) private var hasSeenPermissionPriming = false
     @State private var isShowingPermissionPrimingSheet = false
     @State private var selectedStat: HealthMetricContext = .steps
     @State private var rawSelectedDate: Date?
@@ -55,13 +57,20 @@ struct DashboardView: View {
                     }
                     .pickerStyle(.segmented)
                     
+                    Text(
+                        "\(selectedHealthMetric?.date.formatted(date: .abbreviated, time: .shortened) ?? Date.now.formatted())"
+                    )
+                    
                     VStack {
                         NavigationLink(value: selectedStat) {
                             HStack {
                                 VStack(alignment: .leading) {
-                                    Label(isSteps ? "Steps" : "Weight", systemImage: "figure.walk")
-                                        .font(.title3.bold())
-                                        .foregroundStyle(.pink)
+                                    Label(
+                                        isSteps ? "Steps" : "Weight",
+                                        systemImage: "figure.walk"
+                                    )
+                                    .font(.title3.bold())
+                                    .foregroundStyle(.pink)
                                     
                                     Text("Avg: \(Int(avgStepCount)) steps")
                                         .font(.caption)
@@ -77,7 +86,21 @@ struct DashboardView: View {
                         
                         Chart {
                             if let selectedHealthMetric {
-                                RuleMark(x: .value("Selected Metric", selectedHealthMetric.date))
+                                RuleMark(
+                                    x: 
+                                            .value(
+                                                "Selected Metric",
+                                                selectedHealthMetric.date,
+                                                unit: .day
+                                            )
+                                )
+                                .foregroundStyle(Color.secondary.opacity(0.3))
+                                .offset(y: -10)
+                                .annotation(position: .top,
+                                            spacing: 0,
+                                            overflowResolution: .init(x: .fit(to: .chart),y: .disabled)) {
+                                    annotationView
+                                }
                             }
                             
                             RuleMark(y: .value("Average", avgStepCount))
@@ -85,30 +108,49 @@ struct DashboardView: View {
                                 .lineStyle(.init(lineWidth: 1, dash: [5]))
                             
                             ForEach(hkManager.stepData) { steps in
-                                BarMark(x: .value("Date", steps.date, unit: .day),
-                                        y: .value("Steps", steps.value)
+                                BarMark(
+                                    x: .value(
+                                        "Date",
+                                        steps.date,
+                                        unit: .day
+                                    ),
+                                    y: .value("Steps", steps.value)
                                 )
                                 .foregroundStyle(Color.pink.gradient)
+                                .opacity(rawSelectedDate == nil || steps.date == selectedHealthMetric?.date ? 1 : 0.3)
                             }
                         }
                         .frame(height: 150)
-                        .chartXSelection(value: $rawSelectedDate)
+                        .chartXSelection(value: $rawSelectedDate.animation(.easeInOut))
                         .chartXAxis {
                             AxisMarks {
-                                AxisValueLabel(format: .dateTime.month(.defaultDigits).day())
+                                AxisValueLabel(
+                                    format: .dateTime
+                                        .month(.defaultDigits)
+                                        .day()
+                                )
                             }
                         }
                         .chartYAxis {
                             AxisMarks { value in
                                 AxisGridLine()
-                                    .foregroundStyle(Color.secondary.opacity(0.3))
+                                    .foregroundStyle(
+                                        Color.secondary.opacity(0.3)
+                                    )
                                 
-                                AxisValueLabel((value.as(Double.self) ?? 0).formatted(.number.notation(.compactName)))
+                                AxisValueLabel(
+                                    (value.as(Double.self) ?? 0).formatted(
+                                        .number.notation(.compactName)
+                                    )
+                                )
                             }
                         }
                     }
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 12).fill(Color(.secondarySystemBackground)))
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(.secondarySystemBackground))
+                    )
                     
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading) {
@@ -127,30 +169,60 @@ struct DashboardView: View {
                             .frame(height: 240)
                     }
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 12).fill(Color(.secondarySystemBackground)))
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Color(.secondarySystemBackground))
+                    )
                 }
             }
             .padding()
             .task {
                 // if restarted, first ask for permission (comment both await functions)
-                // add the data (fetchStepCount())
-                // fetch it (addSimulatorData())
+                // add the data (addSimulatorData())
+                // fetch it (fetchStepCount())
                 // just one at a time
+                //                await hkManager.addSimulatorData()
                 await hkManager.fetchStepCount()
-//                await hkManager.addSimulatorData()
                 isShowingPermissionPrimingSheet = !hasSeenPermissionPriming
             }
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetricContext.self) { metric in
                 HealthDataListView(metric: metric)
             }
-            .sheet(isPresented: $isShowingPermissionPrimingSheet, onDismiss: {
-                // fetch health data
-            }, content: {
-                HealthKitPermissionPrimingView(hasSeen: $hasSeenPermissionPriming)
-            })
+            .sheet(
+                isPresented: $isShowingPermissionPrimingSheet,
+                onDismiss: {
+                    // fetch health data
+                },
+                content: {
+                    HealthKitPermissionPrimingView(
+                        hasSeen: $hasSeenPermissionPriming
+                    )
+                })
         }
         .tint(isSteps ? .pink : .indigo)
+    }
+    
+    var annotationView: some View {
+        VStack(alignment: .leading) {
+            Text(selectedHealthMetric?.date ?? .now, format:
+                    .dateTime.weekday(.abbreviated).month(.abbreviated).day())
+            .font(.footnote.bold())
+            .foregroundStyle(.secondary)
+            
+            Text(
+                selectedHealthMetric?.value ?? 0,
+                format: .number.precision(.fractionLength(0))
+            )
+            .fontWeight(.heavy)
+            .foregroundStyle(.pink)
+        }
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 4)
+                .fill(Color(.secondarySystemBackground))
+                .shadow(color: .secondary.opacity(0.3), radius: 2, x: 2, y: 2)
+        )
     }
 }
 
