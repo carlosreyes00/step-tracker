@@ -74,7 +74,7 @@ struct DashboardView: View {
                 // add the data (addSimulatorData())
                 // fetch it (fetchStepCount())
                 // just one at a time
-                //                await hkManager.addSimulatorData()
+//                await hkManager.addSimulatorData()
                 await hkManager.fetchStepCount()
                 isShowingPermissionPrimingSheet = !hasSeenPermissionPriming
             }
