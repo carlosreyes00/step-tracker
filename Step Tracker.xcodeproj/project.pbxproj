@@ -20,6 +20,7 @@
 		12ADD67A2C31DCEF00F2480A /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ADD6792C31DCEF00F2480A /* HealthKitManager.swift */; };
 		12B777352DD4190800F8C15A /* StepBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B777342DD4190800F8C15A /* StepBarChart.swift */; };
 		12D92DE72C2870900086AC61 /* HealthDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D92DE62C2870900086AC61 /* HealthDataListView.swift */; };
+		12DB0C152DDF76BA0045FC28 /* StepPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB0C142DDF76BA0045FC28 /* StepPieChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		12ADD6792C31DCEF00F2480A /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		12B777342DD4190800F8C15A /* StepBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepBarChart.swift; sourceTree = "<group>"; };
 		12D92DE62C2870900086AC61 /* HealthDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataListView.swift; sourceTree = "<group>"; };
+		12DB0C142DDF76BA0045FC28 /* StepPieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepPieChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				12B777342DD4190800F8C15A /* StepBarChart.swift */,
+				12DB0C142DDF76BA0045FC28 /* StepPieChart.swift */,
 				1239A6E92DDA9656006FB53F /* ChartMath.swift */,
 				1239A6EB2DDA99FC006FB53F /* ChartDataTypes.swift */,
 			);
@@ -217,6 +220,7 @@
 				1239A6EA2DDA9656006FB53F /* ChartMath.swift in Sources */,
 				12AA90E22CBDF72C00733083 /* HealthMetric.swift in Sources */,
 				1239A6EC2DDA99FC006FB53F /* ChartDataTypes.swift in Sources */,
+				12DB0C152DDF76BA0045FC28 /* StepPieChart.swift in Sources */,
 				1239A6F02DDA9B34006FB53F /* Date+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
