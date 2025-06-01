@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120668812DECE675008A6221 /* WeightDiffBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120668802DECE675008A6221 /* WeightDiffBarChart.swift */; };
 		122231912C27603600AA8021 /* Step_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122231902C27603600AA8021 /* Step_TrackerApp.swift */; };
 		122231932C27603600AA8021 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122231922C27603600AA8021 /* DashboardView.swift */; };
 		122231952C27603800AA8021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 122231942C27603800AA8021 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		120668802DECE675008A6221 /* WeightDiffBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightDiffBarChart.swift; sourceTree = "<group>"; };
 		1222318D2C27603600AA8021 /* Step Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Step Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		122231902C27603600AA8021 /* Step_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step_TrackerApp.swift; sourceTree = "<group>"; };
 		122231922C27603600AA8021 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				12B777342DD4190800F8C15A /* StepBarChart.swift */,
 				12DB0C142DDF76BA0045FC28 /* StepPieChart.swift */,
 				12B1AACE2DDFEB700027D378 /* WeightLineChart.swift */,
+				120668802DECE675008A6221 /* WeightDiffBarChart.swift */,
 				1239A6E92DDA9656006FB53F /* ChartMath.swift */,
 				1239A6EB2DDA99FC006FB53F /* ChartDataTypes.swift */,
 			);
@@ -233,6 +236,7 @@
 				12ADD67A2C31DCEF00F2480A /* HealthKitManager.swift in Sources */,
 				12AB71232C28B4880040984C /* HealthKitPermissionPrimingView.swift in Sources */,
 				1239A6EA2DDA9656006FB53F /* ChartMath.swift in Sources */,
+				120668812DECE675008A6221 /* WeightDiffBarChart.swift in Sources */,
 				12AA90E22CBDF72C00733083 /* HealthMetric.swift in Sources */,
 				1239A6EC2DDA99FC006FB53F /* ChartDataTypes.swift in Sources */,
 				12DB0C152DDF76BA0045FC28 /* StepPieChart.swift in Sources */,
