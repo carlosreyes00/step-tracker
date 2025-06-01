@@ -53,21 +53,12 @@ struct StepBarChart: View {
             
             Chart {
                 if let selectedHealthMetric {
-                    RuleMark(
-                        x:
-                                .value(
-                                    "Selected Metric",
-                                    selectedHealthMetric.date,
-                                    unit: .day
-                                )
-                    )
-                    .foregroundStyle(Color.secondary.opacity(0.3))
-                    .offset(y: -10)
-                    .annotation(position: .top,
+                    RuleMark(x: .value("Selected Metric", selectedHealthMetric.date, unit: .day))
+                        .foregroundStyle(Color.secondary.opacity(0.3))
+                        .offset(y: -10)
+                        .annotation(position: .top,
                                 spacing: 0,
-                                overflowResolution: .init(x: .fit(to: .chart),y: .disabled)) {
-                        annotationView
-                    }
+                                overflowResolution: .init(x: .fit(to: .chart),y: .disabled)) { annotationView }
                 }
                 
                 RuleMark(y: .value("Average", avgStepCount))

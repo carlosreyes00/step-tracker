@@ -43,17 +43,26 @@ struct DashboardView: View {
                     }
                     .pickerStyle(.segmented)
                     
-                    StepBarChart(selectedStat: selectedStat, chartData: hkManager.stepData)
-                    StepPieChart(chartData: ChartMath.averageWeekdayCount(for: hkManager.stepData))
+                    switch selectedStat {
+                    case .steps:
+                        StepBarChart(selectedStat: selectedStat, chartData: hkManager.stepData)
+                        StepPieChart(chartData: ChartMath.averageWeekdayCount(for: hkManager.stepData))
+                    case .weight:
+                        WeightLineChart(selectedStat: selectedStat, chartData: hkManager.weightData)
+                    }
+                    
                 }
             }
             .padding()
             .task {
-                // if restarted, first ask for permission (comment both await functions)
-                // add the data (addSimulatorData())
-                // fetch it (fetchStepCount())
-                // just one at a time
-//                await hkManager.addSimulatorData()
+                // if restarted, first ask for permission (comment all await functions)
+                
+                // add the data
+                // await hkManager.addSimulatorData()
+                
+                // fetch it
+                // just one at a time (first add the data, then fetch it)
+                await hkManager.fetchWeights()
                 await hkManager.fetchStepCount()
                 isShowingPermissionPrimingSheet = !hasSeenPermissionPriming
             }

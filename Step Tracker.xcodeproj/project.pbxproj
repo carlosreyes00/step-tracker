@@ -117,8 +117,8 @@
 		12B777362DD421D500F8C15A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				12AB71222C28B4880040984C /* HealthKitPermissionPrimingView.swift */,
 				122231922C27603600AA8021 /* DashboardView.swift */,
+				12AB71222C28B4880040984C /* HealthKitPermissionPrimingView.swift */,
 				12D92DE62C2870900086AC61 /* HealthDataListView.swift */,
 			);
 			path = Screens;
