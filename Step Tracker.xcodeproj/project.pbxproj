@@ -78,11 +78,11 @@
 		1222318F2C27603600AA8021 /* Step Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				12B1AAD02DDFEF840027D378 /* Utilities */,
 				12ADD6782C31D8A900F2480A /* Step Tracker.entitlements */,
 				122231902C27603600AA8021 /* Step_TrackerApp.swift */,
 				12B7773A2DD4228A00F8C15A /* Model */,
 				1239A6ED2DDA9B14006FB53F /* Extensions */,
+				12B1AAD02DDFEF840027D378 /* Utilities */,
 				12B777392DD4227B00F8C15A /* Managers */,
 				12B777372DD421EB00F8C15A /* Charts */,
 				12B777362DD421D500F8C15A /* Screens */,
